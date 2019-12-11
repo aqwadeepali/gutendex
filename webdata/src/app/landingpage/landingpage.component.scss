@@ -1,0 +1,224 @@
+@import '../../styles/styles.scss';
+
+$desk-wide-width    : 100% !default;
+$desk-wide-max-width: 160rem !default;
+$viewport-margin    : auto !default;
+
+
+.viewport {
+  width: $desk-wide-width;
+  max-width: $desk-wide-max-width;
+  margin-right: $viewport-margin;
+  margin-left: $viewport-margin;
+  @extend .secondary-background;
+  @extend .flex--col;
+  @extend .flex;
+  @extend .text-regular;
+  @extend .text-color;
+  @extend .flex--middle;
+  overflow: hidden;
+}
+
+.viewport--full-height {
+  height: 75vh;
+  overflow: hidden;
+}
+
+.heading{
+  @extend .flex;
+  @extend .flex__item;
+  @extend .flex--col;
+}
+
+.title{
+  @extend .flex;
+  @extend .flex__item;
+  @extend .text-heading1;
+}
+
+.search-title{
+  @extend .flex;
+  @extend .flex__item;
+  @extend .flex--row;
+  @extend .text-heading2;
+
+  i{
+    @extend .flex;
+    @extend .flex--center; 
+    @extend .flex--middle;
+    @extend .pointer;
+  }
+}
+
+.search-content {
+  @extend .flex;
+  @extend .flex--row;
+  @extend .flex--middle;
+  @extend .flex__item;
+  @extend .font-regular;
+  @extend .text-regular;
+
+  margin:5px;
+  background: $light-grey-color;
+  border: 1px solid $light-grey-color;
+  border-radius : 4px;
+  padding-right:10px;
+  padding-left:10px;
+  height : 40px;
+
+  @extend .text-regular;
+
+  :focus-within {
+    border: 1px solid $primary-color;
+  }
+
+  input {
+    height : 40px;    
+    background: $light-grey-color;
+    @extend .flex__item;
+    border:none;
+    @extend .font-regular;
+    @extend .text-regular;
+
+  }
+  input:focus {
+    border:none;
+  }
+}
+
+
+.search-content:focus-within{
+  border: 1px solid $primary-color;
+}
+
+
+.sub-title{
+  @extend .flex;
+  @extend .flex__item; 
+  @extend .text-heading11;
+}
+
+.content {
+    @extend .flex;
+    //@extend .flex__item;
+    @extend .flex--row;
+    @extend .flex--middle;
+    @extend .flex--center;
+    @extend .flex--wrap;
+    height: 85vh;
+    overflow-y:scroll;
+    //width: 55%;
+}
+
+.mover {
+  @extend .flex;
+  //@extend .flex__item;
+  @extend .flex--row;
+  @extend .flex--middle;
+  @extend .flex--center;
+  @extend .text-genre-card;
+  @extend .white-background;
+  @extend .semi-bold;
+  @extend .pointer;
+  margin: 10px;
+  width: 325px;
+}
+
+.genre-card { 
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 50px;
+  margin:20px;
+  box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+
+  i {
+    color:$primary-color;
+  }
+}
+
+.book-rectangle {
+  width: 114px; 
+  height: 162px; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+  @extend .pointer;
+  @extend .white-background;
+}
+
+.search-mover {
+  @extend .flex--col;
+  margin: 10px;
+  width:180px;
+  height:185px;
+}
+
+.book-name{
+  @extend .flex--row;
+  @extend .flex--wrap;
+  @extend .ellipsis;
+  @extend .semi-bold;
+  @extend .text-medium;
+  @extend .pointer;
+
+  width: 115px;
+}
+
+.book-author{
+  @extend .flex--row;
+  @extend .flex--wrap;
+  @extend .ellipsis;
+  @extend .pointer;
+  @extend .font-regular;
+  @extend .text-medium;
+  width: 115px;
+}
+
+.templatewidth {
+  
+}
+
+@media (min-width:320px)  { 
+/* smartphones, iPhone, portrait 480x320 phones */ 
+  .templatewidth{
+    width: 100%;
+  }
+}
+@media (min-width:481px)  { 
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+  .templatewidth{
+    width: 100%;
+  }
+}
+@media (min-width:641px)  { 
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ 
+  .templatewidth{
+    width: 35.5%;
+  }
+}
+@media (min-width:961px)  { 
+  /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+  .templatewidth{
+    width: 40.5%;
+  }
+}
+@media (min-width:1024px) { 
+/* big landscape tablets, laptops, and desktops */ 
+  .templatewidth{
+    width: 45.5%;
+  }
+}
+
+@media (min-width:1025px) { 
+/* big landscape tablets, laptops, and desktops */ 
+  .templatewidth{
+    width: 45.5%;
+  }
+}
+
+@media (min-width:1920px) { 
+/* hi-res laptops and desktops */ 
+  .templatewidth{
+    width: 45.5%;
+  }
+}

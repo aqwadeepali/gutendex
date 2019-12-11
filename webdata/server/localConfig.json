@@ -1,0 +1,6 @@
+{
+  "development": {
+    "microServiceURL": "http://localhost:35050/api_gutenberg/services",
+    "tenantLabel": ""
+  }
+}

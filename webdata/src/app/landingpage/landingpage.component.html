@@ -1,0 +1,47 @@
+<div class="viewport viewport--full-height " style="overflow: hidden;">
+	<div class="templatewidth" *ngIf="!if_category">
+		<div class="heading">
+			<div class="title"> Gutenberg Project </div>
+			<div class="sub-title"> A social cataloging website that allows you to freely search its database of books, annotations, and reviews. </div>
+		</div>
+
+		<div class="content">
+			<div class="mover genre-card" *ngFor="let cat of category" (click)="onCategoryClick(cat)">
+				<i [ngClass]="cat.icon" aria-hidden="true"></i>
+				<div class="flex__item padding-left-8">{{cat.display}}</div>
+				<i class="fa fa-arrow-right" aria-hidden="true"></i>
+			</div> 
+		</div>
+	</div>
+
+	<div class="templatewidth" *ngIf="if_category">
+		<div class="heading">
+			<div class="search-title" (click)="goBack()"> 
+				<div class="flex" ><i class="fa fa-arrow-left padding-right-8" aria-hidden="true"></i></div>
+				<div class="flex__item padding-left-8">{{selected_category.label}}</div>
+			</div>
+			<div class="search-content">
+				<i class="fa fa-search" style="padding-left:5px;padding-right:5px;" aria-hidden="true"></i>
+                <input type="text" pInputText placeholder="Search" [(ngModel)]="searchText" (change)="onSearchTextChange(event)"> 
+                <i class="fa fa-times" style="padding-left:5px;padding-right:5px;cursor: pointer;" aria-hidden="true" (click)="clearSearch()"></i>
+			</div> 
+			
+		</div>
+
+		<div class="content" #container style="margin-top:10px;overflow-y: scroll;" (scroll)="onScroll()">
+        	<div class="search-mover" *ngFor="let card of book_records">
+            	<div class="book-rectangle" (click)="onBookClick(card)">
+            		IMAGE
+            	</div>
+            	<div class="book-name" [matTooltip]="card.title" (click)="onBookClick(card)">
+            		{{card.title}}
+            	</div>
+            	<div class="book-author" [matTooltip]="card.author.name" (click)="onBookClick(card)">
+            		{{card.author.name}}
+            	</div>
+            </div>
+		</div>
+	</div>
+
+</div>
+
