@@ -33,7 +33,7 @@
     "ng2-img-map": "^0.1.2",
     "primeicons": "^2.0.0",
     "primeng": "^8.1.1",
-    "react-native": "^0.61.4",
+    "react-native": "^0.62.3",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.5.3",
     "tslib": "^1.9.0",
